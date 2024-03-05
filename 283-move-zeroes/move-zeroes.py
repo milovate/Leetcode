@@ -9,3 +9,5 @@ class Solution:
             # swap with you
             if nums[slow] != 0:
                 slow += 1
+                
+            # hello vscode
