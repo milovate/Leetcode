@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    bool customComparator(vector<int>& a,vector<int>& b) {
+   static bool customComparator(vector<int>& a,vector<int>& b) {
     if (a[0] != b[0]) {
         return a[0] < b[0];
     }
@@ -15,7 +15,7 @@ public:
           int n=a.size();
 
     vector<vector<int>>res;
-    sort(a.begin(),a.end());
+    sort(a.begin(),a.end(),customComparator);
     int start=a[0][0];
     int end=a[0][1];
     for(int i=1;i<n;i++){
