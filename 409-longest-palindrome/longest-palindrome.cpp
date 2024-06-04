@@ -3,7 +3,7 @@ public:
     int longestPalindrome(string s) {
       //if eve one is odd add 1 to final answer 
       // freqency iff odd bool =true , freq-1 is added 
-      map<char,int> mp;
+      unordered_map<char,int> mp;
       for(int i=0;i<s.size();i++){
         mp[s[i]]++;
       }
