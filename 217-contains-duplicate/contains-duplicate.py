@@ -15,7 +15,7 @@ class Solution:
             d[num]+=1
         
         for key,value in d.items():
-            print(f"{key}  {value}")
+
             if value>1:
                 ans+=1
                 return True
