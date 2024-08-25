@@ -13,8 +13,8 @@ public:
         for(int i=0;i<a.size();i++){
             if(a[i]!=b[i]&&mpa==mpb)cnt++;
         }
-        cout<<a<<endl;
-        cout<<b<<" "<<cnt<<endl;
+        // cout<<a<<endl;
+        // cout<<b<<" "<<cnt<<endl;
         
         return (cnt==2)?true:false;
     }
