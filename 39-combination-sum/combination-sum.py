@@ -8,19 +8,11 @@ class Solution:
         t=target
         
         def solve(ind,t,temp):
-            # if ind==n-1:
-            #     if t==0:
-            #         ans.append(temp[:])
-            #     elif(t!=0 and t%nums[n-1]==0):
-            #         for _ in range(int(nums[n-1]/t)):
-            #             temp.append(nums[n-1])
-            #         ans.append(temp[:])
-            #     return
             if ind==n:
                 if(t==0):
                     ans.append(temp[:])
                 return
-            print(temp)
+            # print(temp)
             if t >= nums[ind]:
                 temp.append(nums[ind])
                 solve(ind,t-nums[ind],temp)
