@@ -15,8 +15,8 @@ class Solution:
 
 
         while(cnt!=len(q)):
-            print(q)
-            print(cnt)
+            # print(q)
+            # print(cnt)
             if len(q)==0:
                  return 0
             if len(q)>0 and stack[-1]==q[0]:
