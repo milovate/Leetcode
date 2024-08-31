@@ -1,28 +1,28 @@
 class Solution:
     def letterCombinations(self, digits: str):
-        if not digits:
-            return []
-        
-        # Mapping of digits to corresponding letters
-        key = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
-        
-        def backtrack(index: int, path: str):
-            # Base case: If the current path is complete, add it to the results
-            if index == len(digits):
-                ans.append(path)
+        res = []
+        digitToChar = {
+            "2": "abc",
+            "3": "def",
+            "4": "ghi",
+            "5": "jkl",
+            "6": "mno",
+            "7": "qprs",
+            "8": "tuv",
+            "9": "wxyz",
+        }
+
+        def backtrack(i, curStr):
+            if len(curStr) == len(digits):
+                res.append(''.join(curStr[:]))
                 return
-            
-            # Get the letters that the current digit can represent
-            possible_letters = key[int(digits[index])]
-            
-            # Iterate through all possible letters and backtrack
-            for letter in possible_letters:
-                backtrack(index + 1, path + letter)
-        
-        # Initialize the result list
-        ans = []
-        
-        # Start the backtracking process
-        backtrack(0, "")
-        
-        return ans
+            for c in digitToChar[digits[i]]:
+                curStr.append(c)
+                backtrack(i + 1, curStr)
+                curStr.pop()
+
+        if digits:
+            temp=[]
+            backtrack(0, temp)
+
+        return res
