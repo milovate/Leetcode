@@ -8,7 +8,6 @@ public:
         stack<int>sa;
         int total=0;
 
-
     if(x>y){
 
         for(int i=0;i<n;i++){
