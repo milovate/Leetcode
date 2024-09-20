@@ -9,10 +9,12 @@ class Solution:
         # return False
 
 
-        d=collections.defaultdict(int)
+        # d=collections.defaultdict(int)
+        d=dict()
         ans=0
         for num in nums:
-            d[num]+=1
+            d[num]=d.get(num,0)+1
+            # d[num]+=1
         
         for key,value in d.items():
 
