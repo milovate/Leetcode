@@ -14,7 +14,7 @@ class Solution:
         
 
         left=1
-        right=10000000000
+        right= max(piles)
 
         while(left<=right):
             mid=left+(right-left)//2
