@@ -1,18 +1,17 @@
+
 class Solution:
 
-
-    def recurStair(self,ind :int,n:int,dp:list,cost:list)-> int:
-        if ind==n:
-            return 0
-        if ind>n:
-            return 1e9 
-        if dp[ind]!=0:
-            return dp[ind]
-
-        dp[ind]=min(self.recurStair(ind+1,n,dp,cost)+cost[ind],self.recurStair(ind+2,n,dp,cost)+cost[ind])
-        return dp[ind] 
-
-    def minCostClimbingStairs(self, cost: List[int]) -> int:
-        dp=[0]*(len(cost)+1)
-        return min(self.recurStair(0,len(cost),dp,cost),self.recurStair(1,len(cost),dp,cost))
+    def minCostClimbingStairs(self, cost: list) -> int:
+        n = len(cost)
         
+        
+        dp = [0] * (n + 1)
+        dp[n] = 0
+                
+        for i in range(n - 1, -1, -1):
+            if i == n - 1:
+                dp[i] = cost[i]  
+            else:
+                dp[i] = cost[i] + min(dp[i + 1], dp[i + 2])
+
+        return min(dp[0], dp[1])
