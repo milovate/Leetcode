@@ -10,7 +10,9 @@ class Solution:
 
         state = all_ones
 
-        level = {state}
+
+        level = {0}
+        # print(level)
         for i in range(presses):
             next_level = set()
             for state in level:
